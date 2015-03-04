@@ -7,3 +7,8 @@ rm(data)
 datetime <- paste(as.Date(sub$Date), sub$Time)
 sub$Datetime <- as.POSIXct(datetime)
 ##plot2
+plot(sub$Global_active_power~sub$Datetime, type="l",
+     ylab="Global Active Power (kilowatts)", xlab="")
+
+dev.copy(png, file="./GitHub/ExData_Plotting1/plot2.png", height=480, width=480)
+dev.off()
